@@ -2,9 +2,11 @@ This file contains SQL questions.
 Please read the questions and answer.
 
 What is Database?
-A.
+A. is an organized collection of structured information, or data.
 
 What is DBMS?
+A. is a software package designed to define, manipulate, retrieve and manage data in a database.
+
 What is the difference between SQL and MySQL?
 What is RDBMS? How is it different from DBMS?
 What are Tables and Fields?
