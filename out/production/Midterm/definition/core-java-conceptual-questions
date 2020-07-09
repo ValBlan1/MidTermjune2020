@@ -217,7 +217,7 @@ Difference between jUnit and testNG?
 A. TestNG supports Dependency Testing while JUnit does not but they are similar.
 
 What are the dependencies for this project?
-A.
+A. it determines in which order project tasks and activities should be carried out.
 
 what is dependency injection in java?
 A. It is when a class depends on another class to do some task.

@@ -1,8 +1,7 @@
 package datastructure;
 
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashMap;
+import javax.swing.text.html.parser.Entity;
+import java.util.*;
 
 public class CollectionView {
 
@@ -18,8 +17,19 @@ public static void main(String[] args) {
         map.put(5, "San Jose");
         map.put(6, "Seattle");
 
+        Set<Map.Entry<Integer, String>> entrySet = map.entrySet();
+        Iterator<Map.Entry<Integer, String>> Iterator = entrySet.iterator();
+        for (Map.Entry<Integer, String> entry:entrySet) {
+                Integer j = entry.getKey();
+                System.out.println(j+" "+ "Collection view of values:" + " "+entry.getValue());
+        }
 
-
-    }
 
 }
+}
+
+
+
+
+
+

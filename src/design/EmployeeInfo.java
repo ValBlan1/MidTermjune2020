@@ -21,23 +21,68 @@ public class EmployeeInfo {
 	 * declare few static and final fields and some non-static fields
 	 */
 	static String companyName;
-	
+	private String departmentName;
+	private String employeeName;
+	private int employeeId;
+	private int performance;
+	private static double salary;
+
 	/*
 	 * You must implement the logic for below 2 methods and 
 	 * following 2 methods are prototype as well for other methods need to be design,
 	 * as you will come up with the new ideas.
 	 */
-	
-	/*
-	 * you must have multiple constructor.
-	 * Must implement below constructor.
-	 */
-	public EmployeeInfo(int employeeId){
-		
+	public void describeCompany(String description) {
+		System.out.println(description);
 	}
-    public EmployeeInfo(String name, int employeeId){
-		
+	public void assignDepartment(String departmentName) {
+		this.departmentName = departmentName;
 	}
+
+	public String getDepartmentName() {
+		return departmentName;
+	}
+	public void setDepartmentName(String departmentName){
+		this.departmentName = departmentName;
+	}
+	public String getEmployeeName(){
+		return employeeName;
+	}
+
+	public int getEmployeeId() {
+		return employeeId;
+	}
+	public void setEmployeeId(int employeeId) {
+		this.employeeId = employeeId;
+	}
+
+	public int getPerformance() {
+		return performance;
+	}
+
+	public void setPerformance(int performance) {
+		this.performance = performance;
+	}
+
+	public static double getSalary() {
+		return salary;
+	}
+
+	public static void setSalary(double salary) {
+		EmployeeInfo.salary = salary;
+	}
+	public double calcSalary(double salary) {
+		double YearlySalary = salary * 12;
+		return YearlySalary;
+	}
+	public EmployeeInfo(String name, int employeeId){
+			this.employeeId=employeeId;
+			employeeName = name;
+	}
+
+
+
+
 	
 	/*
 	 * This methods should calculate Employee bonus based on salary and performance.
@@ -47,12 +92,29 @@ public class EmployeeInfo {
 	 * So you probably need to send 2 arguments.
 	 * 
 	 */
-	public static int calculateEmployeeBonus(int numberOfYearsWithCompany){
-		int total=0;
+			int total=0;
 
 
+		public double calculateEmployeeBonus(double salary, int performance) {
 
-		return total;
+			double yearlyBonus = 0;
+			if (performance == 5) {
+				yearlyBonus = salary * 0.1 * 12;
+			} else if (performance == 4) {
+				yearlyBonus = salary * 0.08 * 12;
+			} else if (performance == 3) {
+				yearlyBonus = salary * 0.06 * 12;
+			} else if (performance == 2) {
+				yearlyBonus = 0;
+				System.out.println("Poor performance need to improve.");
+			} else {
+				yearlyBonus = 0;
+				System.out.println("You are fired.");
+			}
+			System.out.println("Total Bonus: " + yearlyBonus);
+			return yearlyBonus;
+
+
 	}
 
 
@@ -62,7 +124,7 @@ public class EmployeeInfo {
 	 * Hints: pension will be 5% of the salary for 1 year, 10% for 2 years with the company and so on.
 	 * 
 	 */
-	public static int calculateEmployeePension(){
+	public static int calculateEmployeePension(int salary){
 		int total=0;
 		Scanner sc  = new Scanner(System.in);
 		System.out.println("Please enter start date in format (example: May,2015): ");
@@ -74,11 +136,33 @@ public class EmployeeInfo {
 
         //implement numbers of year from above two dates
 		//Calculate pension
+		String priorYear = convertedJoiningDate.substring(convertedJoiningDate.length() - 2, convertedJoiningDate.length());
+        String currentYear = convertedTodaysDate.substring(convertedTodaysDate.length() -2, convertedTodaysDate.length());
+        int start = Integer.parseInt(priorYear);
+        int current = Integer.parseInt(currentYear);
 
+        int numberOfYears = current - start;
+        if (numberOfYears >= 3 ){
+        	total = (int)(EmployeeInfo.salary * 0.15);
+        }else if (numberOfYears == 2){
+        	total = (int) (EmployeeInfo.salary * 0.10);
+        }else if (numberOfYears == 1) {
+			total = (int) (EmployeeInfo.salary * 0.05);
+		}else if(numberOfYears == 0) {
+        	total=0;
 
+		}
+		System.out.println("Pension Amount: $"+ total);
 
 		return total;
+
 	}
+
+	public String employeeName() {
+		return null;
+	}
+
+
 	private static class DateConversion {
 
 		public DateConversion(Months months){}
@@ -113,22 +197,22 @@ public class EmployeeInfo {
 					date = 6;
 					break;
 				case July:
-					date = 1;
+					date = 7;
 					break;
 				case August:
-					date = 1;
+					date = 8;
 					break;
 				case September:
-					date = 1;
+					date = 9;
 					break;
 				case October:
-					date = 1;
+					date = 10;
 					break;
 				case November:
-					date = 1;
+					date = 11;
 					break;
 				case December:
-					date = 1;
+					date = 12;
 					break;
 				default:
 					date = 0;

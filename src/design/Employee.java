@@ -8,7 +8,7 @@ public interface Employee {
 	//please read the following method and understand the business requirements of these following methods
 	//and then implement these in a concrete class.
 	
-	//employeeId() will return employee id.
+	//employeeId(); will return employee id.
 	public int employeeId();
 	
 	//employeeName() will return employee name
