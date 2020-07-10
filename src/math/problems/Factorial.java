@@ -1,5 +1,7 @@
 package math.problems;
 
+import java.util.Scanner;
+
 /**
  * Created by mrahman on 04/02/18.
  */
@@ -11,8 +13,35 @@ public class Factorial {
          * Write a java program to find Factorial of a given number using Recursion as well as Iteration.
          *
          */
-        int [] array1 = {30,12,5,9,2,20,33,1};
-        int [] array2 = {18,25,41,47,17,36,14,19};
+
+        Scanner recursion = new Scanner(System.in);
+        System.out.println("Enter the number:");
+        int num = recursion.nextInt();
+        int Factorial = factorial(num);
+        System.out.println("Factorial number using Recursion is: " + Factorial);
+
+        Scanner iteration = new Scanner(System.in);
+        System.out.print("Enter the number:");
+        int y = iteration.nextInt();
+        int result = factorial(y);
+        System.out.println("The factorial of " + y + " using Iteration is " + result);
 
     }
+    public static int Factorial(int n) {
+        int result = 1;
+        for (int i = 1; i <= n; i++) {
+            result = result * i;
+        }
+        return result;
+    } static int factorial(int n) {
+        int output;
+        if(n==1){
+            return 1;
+        }
+        output = factorial(n-1)* n;
+        return output;
+
+    }
+
 }
+

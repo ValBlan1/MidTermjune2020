@@ -14,7 +14,19 @@ public class LowestNumber {
 		 */
 		int  array[] = new int[]{211,110,99,34,67,89,67,456,321,456,78,90,45,32,56,78,90,54,32,123,67,5,679,54,32,65};
 
-		//find lowest number from the array
+		int smallest, size;
+		size = array.length;
+
+		for(int i = 0; i<size; i++ ){
+			for(int j = i+1; j<size; j++){
+				if(array[i]>array[j]){
+					smallest = array[i];
+					array[i] = array[j];
+					array[j] = smallest;
+				}
+			}
+		}
+		System.out.println("Smallest number is: " + array[0]);
 
 		ConnectToSqlDB connectToSqlDB = new ConnectToSqlDB();
 		List<String> lowestValue = new ArrayList<String>();
@@ -26,8 +38,8 @@ public class LowestNumber {
 			e.printStackTrace();
 		}
 		System.out.println("Data is reading from the Table (tbl_primenumber) and displaying to the console");
-		for(String st:lowestValue){
-			System.out.println(st);
+		for(String low:lowestValue){
+			System.out.println(low);
 		}
 	}
 
