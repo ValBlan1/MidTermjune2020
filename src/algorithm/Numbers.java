@@ -136,8 +136,6 @@ public class Numbers {
 		n = num.length;
 		randomize (num, n);;
 
-
-		//Come to conclusion about which Sorting Algo is better in given data set.
 	}
 
 	public static int findLow(int[] array){
