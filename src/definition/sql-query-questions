@@ -8,14 +8,34 @@ What is DBMS?
 A. is a software package designed to define, manipulate, retrieve and manage data in a database.
 
 What is the difference between SQL and MySQL?
+A. SQL is used in the accessing and  updating data and MySQL is a RDBMS that store, retrieve and modify data.
+
 What is RDBMS? How is it different from DBMS?
+A. RDBMS: Relational Database Management System.
+  RDBMS store data in a tabular form and DBMS applications store data as files.
+
 What are Tables and Fields?
+A.Tables: is composed of records ad fields that holds data, each table is a database that holds data about a
+different, but related subject.
+  Fields: is part of a record and contains a single piece of data for the subject of the record.
+
 What is SQL?
+A. Structured Query Language, is a standard language for accessing and manipulating databases.
+
 What are Constraints in SQL?
+A. used to specify rules for the data in a table.
+
 What is a Primary Key?
+A. Constraint uniquely identifies each record in a table.
+
 What is a Foreign Key?
+A. key used to link two tables together.
+
 What is Normalization?
+A. is a systematic approach of decomposing tables to eliminate data repetition.
+
 What is Denormalization?
+A. is a strategy that database managers use to increase the performance of a database infrastructure
 
 You have 2 tables given below.
 
